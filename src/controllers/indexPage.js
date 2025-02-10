@@ -30,4 +30,10 @@ const submitMessage = (req, res) => {
   res.redirect('/');
 }
 
-module.exports = { indexPage, newMessage, submitMessage };
+const getDetails = (req, res) => {
+  const index = Number(req.params.index);
+  const message = messages[index];
+  res.render('details', { message: message });
+}
+
+module.exports = { indexPage, newMessage, submitMessage, getDetails };
