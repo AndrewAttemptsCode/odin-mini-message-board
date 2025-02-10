@@ -13,7 +13,7 @@
     </header>
     <main>
       <div class="message-board">
-        <% messages.forEach((message) => { %>
+        <% messages.forEach((message, index) => { %>
           <div class="message-card">
             <div class="card-user">
               <span><strong><%= message.user %></strong></span>
@@ -21,6 +21,7 @@
             </div>
             <div class="card-message">
               <%= message.text %>
+              <a href="/details/<%= index %>">Details</a>
             </div>
           </div>
         <% }); %>
