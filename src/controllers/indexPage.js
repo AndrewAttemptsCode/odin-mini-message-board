@@ -16,8 +16,8 @@ const messages = [
   },
 ];
 
-const homePage = (req, res) => {
+const indexPage = (req, res) => {
   res.render('index', { title: 'Mini Message Board', messages: messages });
 };
 
-module.exports = { homePage };
+module.exports = { indexPage };
