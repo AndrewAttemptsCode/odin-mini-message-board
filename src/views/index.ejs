@@ -6,6 +6,15 @@
   <title><%= title %></title>
 </head>
 <body>
-  <h1>Test test 123</h1>
+  <h1><%= title %></h1>
+
+  <% messages.forEach((message) => { %>
+    <div>
+    <%= message.user %>
+    <%= message.added %>
+    <%= message.text %>
+    </div>
+  <% }); %>
+
 </body>
 </html>
