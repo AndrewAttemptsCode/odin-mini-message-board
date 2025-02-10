@@ -80,6 +80,8 @@ main {
 }
 
 .card-message {
+  display: flex;
+  justify-content: space-between;
   overflow-wrap: break-word;
 }
 
@@ -94,4 +96,12 @@ button {
 
 button:hover {
   background-color: #1ABC9C;
+}
+
+a,
+a:link, 
+a:visited, 
+a:hover, 
+a:active {
+  color: inherit;
 }
