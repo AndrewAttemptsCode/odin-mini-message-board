@@ -26,7 +26,7 @@ const newMessage = (req, res) => {
 
 const submitMessage = (req, res) => {
   const { user, message } = req.body;
-  messages.push({ user: user, text: message, added: new Date().toLocaleString() });
+  messages.unshift({ user: user, text: message, added: new Date().toLocaleString() });
   res.redirect('/');
 }
 
