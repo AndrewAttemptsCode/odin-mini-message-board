@@ -20,4 +20,14 @@ const indexPage = (req, res) => {
   res.render('index', { title: 'Mini Message Board', messages: messages });
 };
 
-module.exports = { indexPage };
+const newMessage = (req, res) => {
+  res.render('form');
+}
+
+const submitMessage = (req, res) => {
+  const { user, message } = req.body;
+  messages.push({ user: user, text: message, added: new Date().toLocaleString() });
+  res.redirect('/');
+}
+
+module.exports = { indexPage, newMessage, submitMessage };
