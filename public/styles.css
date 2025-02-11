@@ -122,3 +122,13 @@ hr {
   height: 3px;
   background: linear-gradient(to right, #16A085, #1ABC9C);
 }
+
+.form-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  color: #BDC3C7;
+  width: 300px;
+  padding: 1rem;
+  box-shadow: 0 0 5px 5px #1ABC9C;
+}
