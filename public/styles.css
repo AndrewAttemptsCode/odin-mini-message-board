@@ -61,6 +61,7 @@ main {
   padding: 1rem;
   height: 60vh;
   width: 60vw;
+  max-width: 800px;
   overflow-y: auto;
   overflow-x: hidden;
   scrollbar-width: none;
@@ -115,6 +116,7 @@ a:active {
   padding: 1rem;
   box-shadow: 0 0 5px 5px #1ABC9C;
   color: #BDC3C7;
+  overflow-wrap: break-word;
 }
 
 hr {
@@ -132,3 +134,4 @@ hr {
   padding: 1rem;
   box-shadow: 0 0 5px 5px #1ABC9C;
 }
+
