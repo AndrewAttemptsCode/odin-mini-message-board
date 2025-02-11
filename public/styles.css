@@ -105,3 +105,20 @@ a:hover,
 a:active {
   color: inherit;
 }
+
+.messsage-container {
+  display: flex;
+  flex-direction: column;
+  width: 50vw;
+  max-width: 500px;
+  gap: 0.5rem;
+  padding: 1rem;
+  box-shadow: 0 0 5px 5px #1ABC9C;
+  color: #BDC3C7;
+}
+
+hr {
+  border: none;
+  height: 3px;
+  background: linear-gradient(to right, #16A085, #1ABC9C);
+}
