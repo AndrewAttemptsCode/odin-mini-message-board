@@ -69,7 +69,7 @@ main {
 
 .message-card {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   padding: 0.5rem;
   gap: 0.5rem;
   box-shadow: 0 0 3px 1px #1ABC9C;
@@ -77,13 +77,16 @@ main {
 
 .card-user {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  overflow-wrap: anywhere;
+  flex: 1;
+  min-width: 0;
 }
 
-.card-message {
+.card-details {
   display: flex;
-  justify-content: space-between;
-  overflow-wrap: break-word;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
 button {
@@ -116,7 +119,7 @@ a:active {
   padding: 1rem;
   box-shadow: 0 0 5px 5px #1ABC9C;
   color: #BDC3C7;
-  overflow-wrap: break-word;
+  overflow-wrap: anywhere;
 }
 
 hr {
