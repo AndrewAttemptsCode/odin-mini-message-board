@@ -16,11 +16,11 @@
         <% messages.forEach((message, index) => { %>
           <div class="message-card">
             <div class="card-user">
-              <span><strong><%= message.user %></strong></span>
-              <span><%= message.added %></span>
+              <strong><%= message.user %></strong>
+              <span><%= message.text %></span>
             </div>
-            <div class="card-message">
-              <%= message.text %>
+            <div class="card-details">
+              <%= message.added %>
               <a href="/details/<%= index %>">Details</a>
             </div>
           </div>
