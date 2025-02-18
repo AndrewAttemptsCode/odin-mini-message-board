@@ -1,22 +1,7 @@
-const messages = [
-  {
-    text: "Hi there!",
-    user: "Amanda",
-    added: new Date().toLocaleString()
-  },
-  {
-    text: "Hello World!",
-    user: "Charles",
-    added: new Date().toLocaleString()
-  },
-  {
-    text: "What's up!",
-    user: "James",
-    added: new Date().toLocaleString()
-  },
-];
+const db = require('../../db/queries');
 
-const getAllMessages = (req, res) => {
+const getAllMessages = async (req, res) => {
+  const messages = await db.allMessagesGet();
   res.render('index', { title: 'Mini Message Board', messages: messages });
 };
 
