@@ -26,10 +26,23 @@ const submitMessage = (req, res) => {
   res.redirect('/');
 }
 
-const getDetails = (req, res) => {
-  const index = Number(req.params.index);
-  const message = messages[index];
-  res.render('details', { message: message });
+const getDetails = async (req, res) => {
+  const messageId = Number(req.params.messageId);
+  const messageDetails = await db.getDetails(messageId);
+
+  const dateObj = new Date(messageDetails.timestamp);
+
+  const day = String(dateObj.getDate()).padStart(2, '0');
+  const month = String(dateObj.getMonth() + 1).padStart(2, '0');
+  const year = String(dateObj.getFullYear()).slice(-2);
+
+  const hours = dateObj.getHours();
+  const minutes = dateObj.getMinutes();
+  const seconds = dateObj.getSeconds();
+
+  messageDetails.formattedDateTime = `${day}/${month}/${year}, ${hours}:${minutes}:${seconds}`;
+
+  res.render('details', { title: 'Message details', messageDetails });
 }
 
 module.exports = { getAllMessages, newMessage, submitMessage, getDetails };
