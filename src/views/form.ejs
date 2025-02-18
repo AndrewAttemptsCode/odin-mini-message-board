@@ -4,18 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/styles.css">
-  <title>New message</title>
+  <title><%= title %></title>
 </head>
 <body>
   <div class="app">
     <header>
-      <h1>New Message</h1>
+      <h1><%= title %></h1>
     </header>
     <main>
       <div class="form-container">
         <form id="new-message" action="/new" method="POST">
-          <label for="user">Name:</label>
-          <input type="text" id="user" name="user" required>
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required>
           
           <label for="message">Message:</label>
           <input type="text" id="message" name="message" required>
