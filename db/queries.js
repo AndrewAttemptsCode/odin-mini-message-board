@@ -10,4 +10,8 @@ const getDetails = async (messageId) => {
   return rows[0];
 };
 
-module.exports = { allMessagesGet, getDetails };
+const messagePost = async (name, message) => {
+  await pool.query('INSERT INTO messages (name, message) VALUES ($1, $2);', [name, message]);
+}
+
+module.exports = { allMessagesGet, getDetails, messagePost };
