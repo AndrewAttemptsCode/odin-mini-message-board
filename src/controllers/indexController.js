@@ -16,7 +16,7 @@ const messages = [
   },
 ];
 
-const indexPage = (req, res) => {
+const getAllMessages = (req, res) => {
   res.render('index', { title: 'Mini Message Board', messages: messages });
 };
 
@@ -36,4 +36,4 @@ const getDetails = (req, res) => {
   res.render('details', { message: message });
 }
 
-module.exports = { indexPage, newMessage, submitMessage, getDetails };
+module.exports = { getAllMessages, newMessage, submitMessage, getDetails };
