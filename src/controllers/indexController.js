@@ -2,6 +2,17 @@ const db = require('../../db/queries');
 
 const getAllMessages = async (req, res) => {
   const messages = await db.allMessagesGet();
+
+  messages.forEach(message => {
+    const dateObj = new Date(message.timestamp);
+
+    const day = String(dateObj.getDate()).padStart(2, '0');
+    const month = String(dateObj.getMonth() + 1).padStart(2, '0');
+    const year = String(dateObj.getFullYear()).slice(-2);
+
+    message.formattedDate = `${day}/${month}/${year}`;
+  });
+
   res.render('index', { title: 'Mini Message Board', messages: messages });
 };
 
