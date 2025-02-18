@@ -17,12 +17,12 @@ const getAllMessages = async (req, res) => {
 };
 
 const newMessage = (req, res) => {
-  res.render('form');
+  res.render('form', { title: 'New Message' });
 }
 
-const submitMessage = (req, res) => {
-  const { user, message } = req.body;
-  messages.unshift({ user: user, text: message, added: new Date().toLocaleString() });
+const submitMessage = async (req, res) => {
+  const { name, message } = req.body;
+  await db.messagePost(name, message);
   res.redirect('/');
 }
 
