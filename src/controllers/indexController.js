@@ -36,9 +36,9 @@ const getDetails = async (req, res) => {
   const month = String(dateObj.getMonth() + 1).padStart(2, '0');
   const year = String(dateObj.getFullYear()).slice(-2);
 
-  const hours = dateObj.getHours();
-  const minutes = dateObj.getMinutes();
-  const seconds = dateObj.getSeconds();
+  const hours = String(dateObj.getHours()).padStart(2, '0');
+  const minutes = String(dateObj.getMinutes()).padStart(2, '0');
+  const seconds = String(dateObj.getSeconds()).padStart(2, '0');
 
   messageDetails.formattedDateTime = `${day}/${month}/${year}, ${hours}:${minutes}:${seconds}`;
 
