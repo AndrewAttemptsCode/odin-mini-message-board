@@ -13,15 +13,15 @@
     </header>
     <main>
       <div class="message-board">
-        <% messages.forEach((message, index) => { %>
+        <% messages.forEach(message => { %>
           <div class="message-card">
             <div class="card-user">
-              <strong><%= message.user %></strong>
-              <span><%= message.text %></span>
+              <strong><%= message.name %></strong>
+              <span><%= message.message %></span>
             </div>
             <div class="card-details">
-              <%= message.added %>
-              <a href="/details/<%= index %>">Details</a>
+              <%= message.timestamp %>
+              <a href="/details/<%= message.id %>">Details</a>
             </div>
           </div>
         <% }); %>
