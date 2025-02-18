@@ -6,6 +6,6 @@ const indexRouter = Router();
 indexRouter.get('/', getAllMessages);
 indexRouter.get('/new', newMessage);
 indexRouter.post('/new', submitMessage);
-indexRouter.get('/details/:index', getDetails);
+indexRouter.get('/details/:messageId', getDetails);
 
 module.exports = indexRouter;
